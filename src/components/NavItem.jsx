@@ -8,7 +8,6 @@ export default function NavItem({ item, collapsed, openMenus, toggleMenu, isActi
   const Icon = item.icon;
   const navigate = useNavigate();
 
-  // Parent aktiv mi — child route-lardan birindədirsə
   const isParentActive = hasChildren
     ? item.children.some(child => isActive(child.path))
     : false;
