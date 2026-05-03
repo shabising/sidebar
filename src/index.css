@@ -12,21 +12,14 @@ body {
 }
 
 .sidebar {
-  width: 240px;
-  min-width: 240px;
   background: #fff;
   border-right: 1px solid #eee;
   display: flex;
   flex-direction: column;
-  transition: width 0.28s cubic-bezier(.4,0,.2,1), min-width 0.28s;
   overflow: hidden;
   position: relative;
   z-index: 100;
-}
-
-.sidebar.collapsed {
-  width: 56px;
-  min-width: 56px;
+  min-width: 0;
 }
 
 .sidebar-logo {
@@ -455,4 +448,8 @@ body.dark .dark-toggle {
 body.dark .dark-toggle:hover {
   background: #2a2a3e;
   color: #e8e4ff;
+}
+
+.app.is-mobile .toggle-btn {
+  display: none;
 }

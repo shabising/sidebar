@@ -1,4 +1,5 @@
 import { ChevronLeft } from 'lucide-react';
+import { motion } from 'framer-motion';
 import { navData } from '../data/navData';
 import NavItem from './NavItem';
 
@@ -19,13 +20,15 @@ export default function Sidebar({
         />
       )}
 
-      <aside
+      <motion.aside
         className={[
           'sidebar',
           collapsed ? 'collapsed' : '',
           isMobile ? 'is-mobile' : '',
           isMobile && mobileOpen ? 'mobile-open' : ''
         ].join(' ')}
+        animate={{ width: collapsed ? 56 : 240 }}
+        transition={{ duration: 0.28, ease: [0.4, 0, 0.2, 1] }}
         aria-label="Main navigation"
       >
         <div className="sidebar-logo">
@@ -92,7 +95,7 @@ export default function Sidebar({
             )}
           </div>
         </div>
-      </aside>
+      </motion.aside>
         <button
             className="toggle-btn"
             onClick={() => setCollapsed(p => !p)}
