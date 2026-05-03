@@ -318,3 +318,141 @@ body {
 .app.is-mobile .topbar {
   padding-left: 60px;
 }
+
+body.dark {
+  background: #0f0f1a;
+}
+
+body.dark .sidebar {
+  background: #1a1a2e;
+  border-right-color: #2a2a3e;
+}
+
+body.dark .sidebar-logo {
+  border-bottom-color: #2a2a3e;
+}
+
+body.dark .logo-text {
+  color: #e8e4ff;
+}
+
+body.dark .nav-section-label {
+  color: #555577;
+}
+
+body.dark .nav-link {
+  color: #9999bb;
+}
+
+body.dark .nav-link:hover {
+  background: #2a2a3e;
+  color: #e8e4ff;
+}
+
+body.dark .nav-link.active {
+  background: #6c63ff;
+  color: #fff;
+}
+
+body.dark .nav-link.parent-active {
+  color: #a89dff;
+}
+
+body.dark .sub-link {
+  color: #7777aa;
+}
+
+body.dark .sub-link:hover {
+  background: #2a2a3e;
+  color: #e8e4ff;
+}
+
+body.dark .sub-link--active {
+  color: #a89dff;
+  background: #2a2a3e;
+}
+
+body.dark .sidebar-footer {
+  border-top-color: #2a2a3e;
+}
+
+body.dark .user-row:hover {
+  background: #2a2a3e;
+}
+
+body.dark .user-name {
+  color: #e8e4ff;
+}
+
+body.dark .user-role {
+  color: #555577;
+}
+
+body.dark .main-content {
+  background: #0f0f1a;
+}
+
+body.dark .topbar {
+  background: #1a1a2e;
+  border-bottom-color: #2a2a3e;
+}
+
+body.dark .page-title {
+  color: #e8e4ff;
+}
+
+body.dark .content-area h1 {
+  color: #e8e4ff;
+}
+
+body.dark .content-area p {
+  color: #7777aa;
+}
+
+body.dark .toggle-btn {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  color: #e8e4ff;
+}
+
+body.dark .toggle-btn:hover {
+  background: #2a2a3e;
+}
+
+body.dark .mobile-toggle {
+  background: #1a1a2e;
+  border-color: #2a2a3e;
+  color: #e8e4ff;
+}
+
+.dark-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  margin: 1px 0 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #555;
+  font-size: 13.5px;
+  background: none;
+  border: none;
+  width: 100%;
+  transition: background 0.15s, color 0.15s;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.dark-toggle:hover {
+  background: #f5f5f5;
+  color: #111;
+}
+
+body.dark .dark-toggle {
+  color: #9999bb;
+}
+
+body.dark .dark-toggle:hover {
+  background: #2a2a3e;
+  color: #e8e4ff;
+}

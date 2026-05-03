@@ -1,6 +1,8 @@
-import { NavLink } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-export default function SubMenu({ items, isOpen }) {
+export default function SubMenu({ items, isOpen, isActive }) {
+  const navigate = useNavigate();
+
   return (
     <div
       style={{
@@ -11,17 +13,27 @@ export default function SubMenu({ items, isOpen }) {
       role="menu"
     >
       {items.map(item => (
-        <NavLink
+        <div
           key={item.id}
-          to={item.path}
           role="menuitem"
-          className={({ isActive }) =>
-            `sub-link ${isActive ? 'sub-link--active' : ''}`
-          }
+          tabIndex={0}
+          className={`sub-link ${isActive(item.path) ? 'sub-link--active' : ''}`}
+          onClick={() => navigate(item.path)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              navigate(item.path);
+            }
+            if (e.key === 'Escape') {
+              e.currentTarget.closest('.nav-item')
+                ?.querySelector('.nav-link')?.focus();
+            }
+          }}
+          aria-current={isActive(item.path) ? 'page' : undefined}
         >
           <span className="sub-dot" />
           <span>{item.label}</span>
-        </NavLink>
+        </div>
       ))}
     </div>
   );

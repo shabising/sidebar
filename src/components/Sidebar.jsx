@@ -5,7 +5,9 @@ import NavItem from './NavItem';
 export default function Sidebar({
   collapsed, setCollapsed,
   isMobile, mobileOpen, setMobileOpen,
-  openMenus, toggleMenu
+  openMenus, toggleMenu,
+  isActive,
+  darkMode, setDarkMode
 }) {
   return (
     <>
@@ -51,6 +53,7 @@ export default function Sidebar({
                   collapsed={collapsed}
                   openMenus={openMenus}
                   toggleMenu={toggleMenu}
+                  isActive={isActive}
                 />
               ))}
             </div>
@@ -58,6 +61,22 @@ export default function Sidebar({
         </nav>
 
         <div className="sidebar-footer">
+
+        <button
+          className="dark-toggle"
+          onClick={() => setDarkMode(p => !p)}
+          aria-label="Toggle dark mode"
+        >
+          <span className="nav-icon" aria-hidden="true">
+            {darkMode ? '☀️' : '🌙'}
+          </span>
+          {!collapsed && (
+            <span className="nav-label">
+              {darkMode ? 'Light mode' : 'Dark mode'}
+            </span>
+          )}
+        </button>
+
           <div
             className="user-row"
             tabIndex={0}

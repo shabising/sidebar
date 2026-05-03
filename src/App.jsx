@@ -8,7 +8,9 @@ function Layout() {
   const {
     collapsed, setCollapsed,
     isMobile, mobileOpen, setMobileOpen,
-    openMenus, toggleMenu
+    openMenus, toggleMenu,
+    isActive,
+    darkMode, setDarkMode,
   } = useSidebar();
 
   const location = useLocation();
@@ -17,10 +19,13 @@ function Layout() {
     : location.pathname.split('/').filter(Boolean).pop().replace('-', ' ');
 
   return (
-    <div className={`app ${isMobile ? 'is-mobile' : ''} ${collapsed ? 'is-collapsed' : ''}`}>      <Sidebar
+    <div className={`app ${isMobile ? 'is-mobile' : ''} ${collapsed ? 'is-collapsed' : ''}`}>      
+      <Sidebar
         collapsed={collapsed} setCollapsed={setCollapsed}
         isMobile={isMobile} mobileOpen={mobileOpen} setMobileOpen={setMobileOpen}
         openMenus={openMenus} toggleMenu={toggleMenu}
+        isActive={isActive}
+        darkMode={darkMode} setDarkMode={setDarkMode}
       />
 
       <div className="main-content">
